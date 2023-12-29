@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="R Shiny Presentation_files/libs/revealjs/dist/theme/quarto.css">
   <link href="R Shiny Presentation_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -340,11 +405,14 @@ Jehangeer Aswani
 <h2>ABOUT ME</h2>
 <div class="columns">
 <div class="column right">
-
+<p>I am Jehangeer, a recent statistics graduate from Quaid-e-Azam University.</p>
+<p><br></p>
+<p>I offer my services as a professional R &amp; Shiny freelancer on the Upwork platform.</p>
+<p>Contact me: <a href="https://www.linkedin.com/in/aswanijehangeer/">www.linkedin.com/in/aswanijehangeer/</a></p>
 </div><div class="column">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="images/Jehangeer-pic.jpg" style="width:100.0%" alt="Jehangeer"></p>
+<p><img data-src="images/Jehangeer-pic.jpg" style="width:80.0%" alt="Jehangeer"></p>
 </figure>
 </div>
 </div>
@@ -354,17 +422,21 @@ Jehangeer Aswani
 <h2>AGENDA</h2>
 <p>We will talk in this presentation about:</p>
 <ul>
-<li>What is Shiny.</li>
-<li>What Shiny Can Do! (Shiny Examples).</li>
-<li>Hello World in Shiny.</li>
+<li>What is Shiny?</li>
+<li>What You Need to Get Started.</li>
+<li>Structure/Anatomy of Shiny and Hello Shiny App.</li>
+<li>Shiny Inputs &amp; Outputs.</li>
 <li>Understanding Reactivity.</li>
 <li>Creating Shiny Apps from Scratch.</li>
-<li>Shiny Learning Resources.</li>
-<li><strong>Ask questions in the chat throughout!</strong></li>
+<li>Deployment Options.</li>
+<li>What’s Next - (Shiny Learning Resources).</li>
 </ul>
 </section>
-<section id="workshop-resources" class="slide level2">
-<h2>WORKSHOP RESOURCES</h2>
+<section id="talk-resources" class="slide level2">
+<h2>TALK RESOURCES</h2>
+<p>You can find all the material we’ll use for this presentation in this GitHub repository.</p>
+<p><br></p>
+<p>GitHub: <a href="https://github.com/aswanijehangeer/Unveiling-the-Power-of-RShiny-Dashboards">github.com/aswanijehangeer/Unveiling-the-Power-of-RShiny-Dashboards</a></p>
 </section>
 <section id="what-is-shiny" class="slide level2">
 <h2>WHAT IS SHINY?</h2>
@@ -380,8 +452,228 @@ Jehangeer Aswani
 </div>
 </div>
 </div>
-<p><img src="images/logo.png" class="slide-logo"></p>
-<div class="footer footer-default">
+</section>
+<section id="what-you-need-to-get-started-in-shiny" class="slide level2">
+<h2>WHAT YOU NEED TO GET STARTED IN SHINY!</h2>
+<p>You just need <strong>R</strong> and <strong>RStudio (IDE)</strong> to get started in Shiny.</p>
+<p><br> <strong>R</strong> is a free, open-source programming language that is used for data mining, statistical analysis, data visualization, and machine learning. <br> Download R here: <a href="https://cran.r-project.org/">cran.r-project.org/</a> <br></p>
+<p><strong>RStudio</strong> is a free, open-source, integrated development environment (IDE) for the R programming language. <br> Download RStudio here: <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop/</a></p>
+</section>
+<section id="rstudio-interface" class="slide level2">
+<h2>RSTUDIO INTERFACE!</h2>
+<p>This is how your rstudio interface should look like after complete installation.</p>
+
+<img data-src="images/rstudio-interface.jpeg" alt="Shiny logo" class="r-stretch quarto-figure-center"></section>
+<section id="structure-of-a-shiny-app" class="slide level2">
+<h2>STRUCTURE OF A SHINY APP!</h2>
+<p>Shiny apps can be developed in a single script named <code>app.R</code>. <br> <code>app.R</code> has three components:</p>
+<ul>
+<li>a user interface (UI) object.</li>
+<li>a server function.</li>
+<li>a call to the <code>shinyApp</code> function. <br></li>
+</ul>
+<p>The <code>ui</code> object shapes the app’s look and feel, while the server function holds the app’s instructions for execution. The <code>shinyApp</code> function combines the UI and <code>server</code> logic to create the Shiny app object.</p>
+</section>
+<section id="structure-of-a-shiny-app-cont" class="slide level2">
+<h2>STRUCTURE OF A SHINY APP CONT…!</h2>
+<p><br> However, for larger applications, splitting the code into two separate files, namely <code>ui.R</code> and <code>server.R</code>, is a good option.</p>
+<p><br> This separation allows for better organization and management of the user interface (UI) elements in <code>ui.R</code> and the server-side logic in <code>server.R</code>.</p>
+</section>
+<section id="anatomy-of-a-shiny-app" class="slide level2">
+<h2>ANATOMY OF A SHINY APP!</h2>
+<p>Here is a code template for an empty app.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Loading Package ----</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># Define UI ----</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="co"># Define server logic ----</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb1-11"><a href="#cb1-11"></a>  </span>
+<span id="cb1-12"><a href="#cb1-12"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># Run the app ----</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lets-build-a-simple-hello-shiny-app" class="slide level2">
+<h2>LET’S BUILD A SIMPLE HELLO SHINY APP!</h2>
+
+<img data-src="images/hello-world-shiny.png" alt="Hello Shiny" class="r-stretch quarto-figure-center"></section>
+<section id="simple-hello-shiny-app---user-interface" class="slide level2">
+<h2>SIMPLE HELLO SHINY APP - USER INTERFACE</h2>
+<p>Here is the <code>ui</code> object for the Hello Shiny App.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># Define UI for app that draws a histogram ----</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="co"># App title ----</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="fu">titlePanel</span>(<span class="st">"Hello Shiny!"</span>),</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="co"># Sidebar layout with input and output definitions ----</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>    <span class="co"># Sidebar panel for inputs ----</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="fu">sidebarPanel</span>(</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>      <span class="co"># Input: Slider for the number of bins ----</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>      <span class="fu">sliderInput</span>(<span class="at">inputId =</span> <span class="st">"bins"</span>,</span>
+<span id="cb2-17"><a href="#cb2-17"></a>                  <span class="at">label =</span> <span class="st">"Number of bins:"</span>,</span>
+<span id="cb2-18"><a href="#cb2-18"></a>                  <span class="at">min =</span> <span class="dv">1</span>,</span>
+<span id="cb2-19"><a href="#cb2-19"></a>                  <span class="at">max =</span> <span class="dv">50</span>,</span>
+<span id="cb2-20"><a href="#cb2-20"></a>                  <span class="at">value =</span> <span class="dv">30</span>)</span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a>    ),</span>
+<span id="cb2-23"><a href="#cb2-23"></a></span>
+<span id="cb2-24"><a href="#cb2-24"></a>    <span class="co"># Main panel for displaying outputs ----</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a>    <span class="fu">mainPanel</span>(</span>
+<span id="cb2-26"><a href="#cb2-26"></a></span>
+<span id="cb2-27"><a href="#cb2-27"></a>      <span class="co"># Output: Histogram ----</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>      <span class="fu">plotOutput</span>(<span class="at">outputId =</span> <span class="st">"distPlot"</span>)</span>
+<span id="cb2-29"><a href="#cb2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30"></a>    )</span>
+<span id="cb2-31"><a href="#cb2-31"></a>  )</span>
+<span id="cb2-32"><a href="#cb2-32"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="simple-hello-shiny-app---server" class="slide level2">
+<h2>SIMPLE HELLO SHINY APP - SERVER</h2>
+<p>Here is the <code>server</code> function for the Hello Shiny App.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># Define server logic required to draw a histogram ----</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="co"># Histogram of the Old Faithful Geyser Data ----</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="co"># with requested number of bins.</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="co"># This expression that generates a histogram is wrapped in a call</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  <span class="co"># to renderPlot to indicate that:</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>  <span class="co">#</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="co"># 1. It is "reactive" and therefore should be automatically</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="co">#    re-executed when inputs (input$bins) change.</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  <span class="co"># 2. Its output type is a plot.</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a>  output<span class="sc">$</span>distPlot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a>    x    <span class="ot">&lt;-</span> faithful<span class="sc">$</span>waiting</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    bins <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fu">min</span>(x), <span class="fu">max</span>(x), <span class="at">length.out =</span> input<span class="sc">$</span>bins <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a></span>
+<span id="cb3-17"><a href="#cb3-17"></a>    <span class="fu">hist</span>(x, <span class="at">breaks =</span> bins, <span class="at">col =</span> <span class="st">"#007bc2"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
+<span id="cb3-18"><a href="#cb3-18"></a>         <span class="at">xlab =</span> <span class="st">"Waiting time to next eruption (in mins)"</span>,</span>
+<span id="cb3-19"><a href="#cb3-19"></a>         <span class="at">main =</span> <span class="st">"Histogram of waiting times"</span>)</span>
+<span id="cb3-20"><a href="#cb3-20"></a></span>
+<span id="cb3-21"><a href="#cb3-21"></a>    })</span>
+<span id="cb3-22"><a href="#cb3-22"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="running-an-app" class="slide level2">
+<h2>RUNNING AN APP!</h2>
+<p>Every Shiny app has the same structure: an <code>app.R</code> file that contains ui and server. You can create a Shiny app by making a new directory and saving an <code>app.R</code> file inside it.</p>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Optional caption (note)</strong></p>
+</div>
+<div class="callout-content">
+<p>It is recommended that each app will live in its own unique directory.</p>
+</div>
+</div>
+</div>
+<p>You can run a Shiny app by giving the name of its directory to the function <code>runApp</code>. <br> For example if your Shiny app is in a directory called <code>my_app</code>, run it with the following code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">runApp</span>(<span class="st">"my_app"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="relaunching-an-app" class="slide level2">
+<h2>RELAUNCHING AN APP!</h2>
+<p>To relaunch your Shiny app:</p>
+<ul>
+<li><p>Run runApp(“myapp”), or</p></li>
+<li><p>Open the app.R script in your RStudio editor. RStudio will recognize the Shiny script and provide a Run App button (at the top of the editor).</p></li>
+</ul>
+
+<img data-src="images/run-app.png" alt="Relaunch" class="r-stretch quarto-figure-center"></section>
+<section id="there-are-more-than-20-inputs-in-shiny" class="slide level2">
+<h2>THERE ARE MORE THAN 20 INPUTS IN SHINY!</h2>
+
+<img data-src="images/shiny-inputs.png" alt="Input" class="r-stretch quarto-figure-center"></section>
+<section id="shiny-input-syntax" class="slide level2">
+<h2>SHINY INPUT SYNTAX</h2>
+
+<img data-src="images/input-syntax.png" alt="Input-Syntax" class="r-stretch quarto-figure-center"></section>
+<section id="shiny-input---example" class="slide level2">
+<h2>SHINY INPUT - EXAMPLE</h2>
+<div class="columns">
+<div class="column right">
+<p>Create an input with an *Input() function.</p>
+<div class="sourceCode" id="cb5" data-code-line-numbers="4-8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb5-4"><a href="#cb5-4"></a>  <span class="fu">sliderInput</span>(</span>
+<span id="cb5-5"><a href="#cb5-5"></a>    <span class="at">inputId =</span> <span class="st">"num"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">label =</span> <span class="st">"Choose a number"</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>  )</span>
+<span id="cb5-9"><a href="#cb5-9"></a>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a>}</span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/Input.png" alt="Input"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="shiny-outputs" class="slide level2">
+<h2>SHINY OUTPUTS</h2>
+
+<img data-src="images/output-functions.png" alt="Shiny Outputs" class="r-stretch quarto-figure-center"></section>
+<section id="shiny-output-syntax" class="slide level2">
+<h2>SHINY OUTPUT SYNTAX</h2>
+<p>To display output, add it to <code>fluidPage()</code> with an <code>*Output()</code> function.</p>
+
+<img data-src="images/plotoutput.png" alt="Plot-Output" class="r-stretch quarto-figure-center"></section>
+<section id="shiny-output---example" class="slide level2">
+<h2>SHINY OUTPUT - EXAMPLE</h2>
+<div class="columns">
+<div class="column right">
+<p>Create an input with an *Input() function.</p>
+<div class="sourceCode" id="cb6" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(shiny)</span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="fu">sliderInput</span>(</span>
+<span id="cb6-5"><a href="#cb6-5"></a>    <span class="at">inputId =</span> <span class="st">"num"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6"></a>    <span class="at">label =</span> <span class="st">"Choose a number"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7"></a>    <span class="at">value =</span> <span class="dv">25</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a>  ),</span>
+<span id="cb6-9"><a href="#cb6-9"></a>  <span class="fu">plotOutput</span>(<span class="st">"hist"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10"></a>)</span>
+<span id="cb6-11"><a href="#cb6-11"></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>}</span>
+<span id="cb6-14"><a href="#cb6-14"></a></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="fu">shinyApp</span>(<span class="at">ui =</span> ui, <span class="at">server =</span> server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/shiny-output.png" alt="Input"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="thanks-you" class="title-slide slide level1 center">
+<h1>THANKS YOU!</h1>
+<p><br> Connect me here:</p>
+<p><br> <a href="https://aswanijehangeer.com/">www.aswanijehangeer.com</a></p>
+<p><br></p>
+<p><a href="https://www.linkedin.com/in/aswanijehangeer/">www.linkedin.com/in/aswanijehangeer/</a></p>
+
+<img src="images/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>www.aswanijehangeer.com</p>
 </div>
 </section>
