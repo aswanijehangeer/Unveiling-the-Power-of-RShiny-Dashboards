@@ -1,0 +1,55 @@
+---
+title: "Unveiling the Power of R Shiny Dashboards"
+author: "Jehangeer Aswani"
+format:
+  revealjs:
+   theme: solarized
+   logo: images/logo.png
+footer: "www.aswanijehangeer.com"
+editor: visual
+---
+
+## ABOUT ME
+::: columns
+::: {.column .right}
+
+
+
+:::
+
+::: {.column}
+
+![](images/Jehangeer-pic.jpg){fig-align="center" fig-alt="Jehangeer" width=100%}
+:::
+:::
+  
+## AGENDA
+
+We will talk in this presentation about:
+
+- What is Shiny.
+- What Shiny Can Do! (Shiny Examples).
+- Hello World in Shiny.
+- Understanding Reactivity.
+- Creating Shiny Apps from Scratch.
+- Shiny Learning Resources.
+- **Ask questions in the chat throughout!**
+
+## WORKSHOP RESOURCES
+  
+
+## WHAT IS SHINY? 
+::: columns
+::: {.column .right}
+
+Shiny is an R package that makes it easy to build interactive web applications (apps) straight from R.
+
+It allows users to convert R code into web applications without needing expertise in web development languages like HTML, CSS, or JavaScript.
+
+:::
+
+::: {.column}
+
+![](images/shiny-logo.png){fig-align="center" fig-alt="Shiny logo" width=100%}
+:::
+:::
