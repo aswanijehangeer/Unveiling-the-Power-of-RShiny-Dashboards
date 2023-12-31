@@ -38,7 +38,7 @@ We will talk in this presentation about:
 -   Understanding Reactivity and Reactive Values.
 -   Sharing Apps - Deployment.
 -   What's Next - (Shiny Learning Resources).
-- **Ask questions in the chat throughout!**
+-   **Ask questions in the chat throughout!**
 
 ## TALK RESOURCES
 
@@ -62,7 +62,7 @@ It allows users to convert R code into web applications without needing expertis
 :::
 :::
 
-## WHAT YOU NEED TO GET STARTED IN SHINY!
+## WHAT YOU NEED TO GET STARTED IN SHINY?
 
 You just need **R** and **RStudio (IDE)** to get started in Shiny.
 
@@ -70,13 +70,13 @@ You just need **R** and **RStudio (IDE)** to get started in Shiny.
 
 **RStudio** is a free, open-source, integrated development environment (IDE) for the R programming language. <br> Download RStudio here: [posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
 
-## RSTUDIO INTERFACE!
+## RSTUDIO INTERFACE
 
 This is how your rstudio interface should look like after complete installation.
 
 ![](images/rstudio-interface.jpeg){fig-align="center" fig-alt="Shiny logo"}
 
-## STRUCTURE OF A SHINY APP!
+## STRUCTURE OF A SHINY APP
 
 Shiny apps can be developed in a single script named `app.R`. <br> `app.R` has three components:
 
@@ -86,13 +86,13 @@ Shiny apps can be developed in a single script named `app.R`. <br> `app.R` has t
 
 The `ui` object shapes the app's look and feel, while the server function holds the app's instructions for execution. The `shinyApp` function combines the UI and `server` logic to create the Shiny app object.
 
-## STRUCTURE OF A SHINY APP CONT...!
+## STRUCTURE OF A SHINY APP CONT...
 
 <br> However, for larger applications, splitting the code into two separate files, namely `ui.R` and `server.R`, is a good option.
 
 <br> This separation allows for better organization and management of the user interface (UI) elements in `ui.R` and the server-side logic in `server.R`.
 
-## ANATOMY OF A SHINY APP!
+## ANATOMY OF A SHINY APP
 
 Here is a code template for an empty app.
 
@@ -114,7 +114,7 @@ server <- function(input, output) {
 shinyApp(ui = ui, server = server)
 ```
 
-## LET'S BUILD A SIMPLE HELLO SHINY APP!
+## LET'S BUILD A SIMPLE HELLO SHINY APP
 
 ![](images/hello-world-shiny.png){fig-align="center" fig-alt="Hello Shiny"}
 
@@ -186,7 +186,7 @@ server <- function(input, output) {
 }
 ```
 
-## RUNNING AN APP!
+## RUNNING AN APP
 
 Every Shiny app has the same structure: an `app.R` file that contains ui and server. You can create a Shiny app by making a new directory and saving an `app.R` file inside it.
 
@@ -202,7 +202,7 @@ You can run a Shiny app by giving the name of its directory to the function `run
 runApp("my_app")
 ```
 
-## RELAUNCHING AN APP!
+## RELAUNCHING AN APP
 
 To relaunch your Shiny app:
 
@@ -212,7 +212,7 @@ To relaunch your Shiny app:
 
 ![](images/run-app.png){fig-align="center" fig-alt="Relaunch"}
 
-## THERE ARE MORE THAN 20 INPUTS IN SHINY!
+## THERE ARE MORE THAN 20 INPUTS IN SHINY
 
 ![](images/shiny-inputs.png){fig-align="center" fig-alt="Input"}
 
@@ -263,7 +263,6 @@ To display output, add it to `fluidPage()` with an `*Output()` function.
 
 ::: columns
 ::: {.column .right}
-
 ``` {.r code-line-numbers="9"}
 library(shiny)
 
@@ -288,32 +287,28 @@ shinyApp(ui = ui, server = server)
 :::
 :::
 
-## QUICK RECAP - WHAT WE HAVE LEARN!
+## QUICK RECAP - WHAT WE HAVE LEARN
 
 ![](images/quick-recap.png){fig-align="center" fig-alt="Recap"}
 
-# SERVER: HOW TO ASSESMBE INPUTS INTO OUTPUTS!
-To write a server function, there are three basic rules. If you follow the three rules, the output will automatically update. 
+# SERVER: HOW TO ASSESMBE INPUTS INTO OUTPUTS?
 
+To write a server function, there are three basic rules. If you follow the three rules, the output will automatically update.
 
+## 1. Save objects to display to output\$.
 
-
-## 1. Save objects to display to output$.
-
-``` {.r}
+``` r
 server <- function(input, output) 
 {
         output$hist <- #code
 }
-
 ```
 
 ![](images/output-hist.png){fig-align="center" fig-alt="Outputs"}
 
+## 2. Build objects to display with render\*()
 
-## 2. Build objects to display with render*()
-
-```{.r}
+``` r
 server <- function(input, output) {
   output$hist <- renderPlot({
     title <- "100 random normal values"
@@ -324,39 +319,35 @@ server <- function(input, output) {
 
 ![](images/renderplots.png){fig-align="center" fig-alt="RenderPlots"}
 
+## 3. Access input values with input\$
 
-## 3. Access input values with input$
-
-```{.r}
+``` r
 server <- function(input, output) {
   output$hist <- renderPlot({
     hist(rnorm(input$num))
   })
 }
 ```
+
 The input value changes whenever a user changes the input.
 
 ![](images/input-values.png){fig-align="center" fig-alt="Input-Values"}
 
-
-## QUICK RECAP: RENDERS!
+## QUICK RECAP: RENDERS
 
 ![](images/renders-recap.png){fig-align="center" fig-alt="Render-Recap"}
 
-
-## QUICK RECAP: SERVER!
+## QUICK RECAP: SERVER
 
 ![](images/server-recap.png){fig-align="center" fig-alt="Server-Recap"}
 
-
 ## WHAT IS REACTIVITY?
 
-Reactivity in shiny refers to the automatic updating of outputs based on changes in inputs or data.
-<br> <br>
-Reactivity automatically occurs whenever we use an input value to render an output object.
+Reactivity in shiny refers to the automatic updating of outputs based on changes in inputs or data. <br> <br> Reactivity automatically occurs whenever we use an input value to render an output object.
 
 <br>
-```{.r code-line-numbers="2,3"}
+
+``` {.r code-line-numbers="2,3"}
 function(input, output) {
   output$hist <- renderPlot({
     hist(rnorm(input$num))
@@ -366,86 +357,75 @@ function(input, output) {
 
 ## WHAT IS A REACTIVE VALUE?
 
-A reactive value is an object that causes reactive functions to re-execute when their value changes. <br>
-For example, user inputs to a Shiny application are reactive value objects.
+A reactive value is an object that causes reactive functions to re-execute when their value changes. <br> For example, user inputs to a Shiny application are reactive value objects.
 
 ![](images/reactive-value.png){fig-align="center" fig-alt="Reactive-Value"}
 
-## REACTIVE VALUES CONT...!
+## REACTIVE VALUES CONT...
 
-Reactive values work together with reactive functions.
-We cannot call a reactive value from outside of one.
-
+Reactive values work together with reactive functions. We cannot call a reactive value from outside of one.
 
 ![](images/reactive-value-2.png){fig-align="center" fig-alt="Reactive-Value"}
 
-## QUICK RECAP: REACTIVE VALUES!
+## QUICK RECAP: REACTIVE VALUES
 
 ![](images/reactive-value-recap.png){fig-align="center" fig-alt="Reactive-Value-Recap"}
 
-
-## SHARE YOUR APPS!
+## SHARE YOUR APPS
 
 When it comes to sharing Shiny apps, we have two basic options:
 
-1. **Share your Shiny app as R script**. This is the simplest way to share an app, but it works only if your users have R on their own computer (and know how to use it).
+1.  **Share your Shiny app as R script**. This is the simplest way to share an app, but it works only if your users have R on their own computer (and know how to use it).
 
-2. **Share your Shiny app as a web page**. This is definitely the most user friendly way to share a Shiny app. Your users can navigate to your app through the internet with a web browser. 
+2.  **Share your Shiny app as a web page**. This is definitely the most user friendly way to share a Shiny app. Your users can navigate to your app through the internet with a web browser.
 
-
-## SHARE AS A WEB PAGE!
+## SHARE AS A WEB PAGE
 
 Sharing Shiny apps as a web page can be accomplished through various methods:
 
 <br>
 
-- Shinyapps.io.
-- Shiny Server.
-- Posit Connect.
+-   Shinyapps.io.
+-   Shiny Server.
+-   Posit Connect.
 
-
-## SHINYAPPS.IO!
+## SHINYAPPS.IO
 
 Posit's Shinyapps.io platform allows for easy deployment and sharing of Shiny applications. We can publish our apps directly from RStudio to Shinyapps.io.
 
 This a shiny app that I have deployed on shinyapps.io this will be how a link looks like and you can share with anyone.
 
-<br>
-[aswanijahangeer.shinyapps.io/chess_grandmasters_shinyapp/](https://aswanijahangeer.shinyapps.io/chess_grandmasters_shinyapp/)
+<br> [aswanijahangeer.shinyapps.io/chess_grandmasters_shinyapp/](https://aswanijahangeer.shinyapps.io/chess_grandmasters_shinyapp/)
 
 <br>
 
 Github of this App: [aswanijehangeer/Chess-Grandmaster-Shiny-App](https://github.com/aswanijehangeer/Chess-Grandmaster-Shiny-App)
 
-
 ## SHINY SERVER & POSIT CONNECT
+
 <br>
 
-Shiny Server is a companion program to Shiny that builds a web server designed to host Shiny apps. It’s free, open source, and available from GitHub.
+Shiny Server is a companion program to Shiny that builds a web server designed to host Shiny apps. It's free, open source, and available from GitHub.
 
 <br>
 
 For enterprise-level deployment and sharing, RStudio Connect provides a secure and managed platform to publish and share Shiny applications within organizations.
 
-
-## YOU KNOW NOW HOW TO ...!
+## YOU KNOW NOW HOW TO ...
 
 <br>
 
 ![](images/what-you-learn.png){fig-align="center" fig-alt="Conclusion"}
 
-## WHAT'S NEXT - SHINY LEARNING RESOURCES!
-
-
+## WHAT'S NEXT - SHINY LEARNING RESOURCES
 
 ::: columns
 ::: {.column .right}
-- [mastering-shiny.org](https://mastering-shiny.org/)
-- [Course developed by Chanin Nantasenamat (aka Data Professor)](https://www.youtube.com/watch?v=9uFQECk30kA)
-- [Publishing Visualizations in R with Shiny and flexdashboard](https://www.coursera.org/learn/data-viz-shiny-dashboards)
-- [Shiny Fundemantals Track with R - DataCamp](https://app.datacamp.com/learn/skill-tracks/shiny-fundamentals-with-r)
-- **Ask:** [RStudio Community](https://community.rstudio.com/)
-
+-   [mastering-shiny.org](https://mastering-shiny.org/)
+-   [Course developed by Chanin Nantasenamat (aka Data Professor)](https://www.youtube.com/watch?v=9uFQECk30kA)
+-   [Publishing Visualizations in R with Shiny and flexdashboard](https://www.coursera.org/learn/data-viz-shiny-dashboards)
+-   [Shiny Fundemantals Track with R - DataCamp](https://app.datacamp.com/learn/skill-tracks/shiny-fundamentals-with-r)
+-   **Ask:** [RStudio Community](https://community.rstudio.com/)
 :::
 
 ::: column
@@ -456,10 +436,9 @@ For enterprise-level deployment and sharing, RStudio Connect provides a secure a
 # THANKS YOU!
 
 <br> Connect me here:
-  
-  <br> [www.aswanijehangeer.com](https://aswanijehangeer.com/)
+
+<br> [www.aswanijehangeer.com](https://aswanijehangeer.com/)
 
 <br>
-  
-  [www.linkedin.com/in/aswanijehangeer/](https://www.linkedin.com/in/aswanijehangeer/)
 
+[www.linkedin.com/in/aswanijehangeer/](https://www.linkedin.com/in/aswanijehangeer/)
